@@ -30,14 +30,12 @@ int main(int argc, const char * argv[]) {
     
     Swarm swarm;
     
-    const Particle *const pParticle = swarm.getParticles();
-    
-    
     double angle = 0;
     double rads = 0;
     
     while (true) {
         
+        swarm.update();
 
         //int elapsed = SDL_GetTicks();
         angle = angle + 1; //Increment angle by 1 everytime the loop runs.
@@ -46,6 +44,8 @@ int main(int argc, const char * argv[]) {
         int green = (sin(rads+90) + 1)*127;
         int blue = (sin(rads+180) + 1)*127;
         
+        const Particle *const pParticle = swarm.getParticles();
+        
         for (int i=0; i < Swarm::NPARTICLES; i++) {
             int xPos = (pParticle[i].m_xPos + 1)*Screen::SCREEN_WIDTH/2;
             int yPos = (pParticle[i].m_yPos + 1)*Screen::SCREEN_WIDTH/2;
@@ -53,6 +53,7 @@ int main(int argc, const char * argv[]) {
         }
         
         screen.update();
+        screen.clear();
         
         if (screen.processEvent() == false) {
             

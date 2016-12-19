@@ -20,3 +20,10 @@ Particle::~Particle() {
     
     
 }
+
+void Particle::update() {
+     double speed = 0.01;
+    
+    m_xPos += speed;
+    m_yPos += speed;
+}

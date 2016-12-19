@@ -17,3 +17,10 @@ Swarm::Swarm() {
 Swarm::~Swarm() {
     
 }
+
+void Swarm::update() {
+    for (int i=0; i < Swarm::NPARTICLES; i++) {
+        m_pParticle[i].update();
+    }
+    
+}

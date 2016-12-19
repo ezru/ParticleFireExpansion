@@ -21,6 +21,7 @@ public:
     bool processEvent();
     void setPixelColour(int xPos, int yPos, Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha);
     void update();
+    void clear();
     void close();
     
 public:
