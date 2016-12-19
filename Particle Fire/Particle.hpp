@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "Screen.hpp"
 
 struct Particle {
@@ -19,6 +20,8 @@ struct Particle {
     double m_yPos;
     double m_xSpeed;
     double m_ySpeed;
+    double m_speed;
+    double m_direction;
     
 public:
     Particle();

@@ -38,11 +38,12 @@ int main(int argc, const char * argv[]) {
         swarm.update();
 
         int elapsed = SDL_GetTicks();
+        
        // angle = angle + 1; //Increment angle by 1 everytime the loop runs.
         //rads = angle*(Screen::PI/180);
-        int red = (sin(elapsed * 0.0002) + 1)*127;
-        int green = (sin(elapsed * 0.0003) + 1)*127;
-        int blue = (sin(elapsed * 0.0005) + 1)*127;
+        int red = (sin(elapsed * 0.0002) + 1)*128;
+        int green = (sin(elapsed * 0.0003) + 1)*128;
+        int blue = (sin(elapsed * 0.0005) + 1)*128;
         
         const Particle *const pParticle = swarm.getParticles();
         
@@ -50,10 +51,8 @@ int main(int argc, const char * argv[]) {
             
             Particle particle = pParticle[i];
             
-            //int xPos = (particle.m_xPos + 1)*Screen::SCREEN_WIDTH/2;
-            //int yPos = (particle.m_yPos + 1)*Screen::SCREEN_WIDTH/2;
             int xPos = (particle.m_xPos + 1)*Screen::SCREEN_WIDTH/2;
-            int yPos = (particle.m_yPos + 1)*Screen::SCREEN_HEIGHT/2;
+            int yPos = particle.m_yPos * Screen::SCREEN_WIDTH/2 + Screen::SCREEN_HEIGHT/2;
             
             screen.setPixelColour(xPos, yPos, red, green, blue, 0);
         }
