@@ -11,11 +11,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Screen.hpp"
 
 struct Particle {
     
     double m_xPos;
     double m_yPos;
+    double m_xSpeed;
+    double m_ySpeed;
     
 public:
     Particle();
