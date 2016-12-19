@@ -57,8 +57,8 @@ int main(int argc, const char * argv[]) {
             screen.setPixelColour(xPos, yPos, red, green, blue, 0);
         }
         
+        screen.blurBox();
         screen.update();
-        screen.clear();
         
         if (screen.processEvent() == false) {
             

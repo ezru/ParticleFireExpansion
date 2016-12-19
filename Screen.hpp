@@ -22,6 +22,7 @@ public:
     void setPixelColour(int xPos, int yPos, Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha);
     void update();
     void clear();
+    void blurBox();
     void close();
     
 public:
@@ -33,7 +34,8 @@ private:
     SDL_Window *m_window;
     SDL_Renderer *m_renderer;
     SDL_Texture *m_texture;
-    Uint32 *m_buffer;
+    Uint32 *m_buffer1;
+    Uint32 *m_buffer2;
     
     double angle;
     

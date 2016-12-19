@@ -18,10 +18,15 @@ struct Particle {
     
     double m_xPos;
     double m_yPos;
+    
+private:
     double m_xSpeed;
     double m_ySpeed;
     double m_speed;
     double m_direction;
+    
+private:
+    void init();
     
 public:
     Particle();
