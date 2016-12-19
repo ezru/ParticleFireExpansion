@@ -35,9 +35,9 @@ int main(int argc, const char * argv[]) {
     
     while (true) {
         
-        swarm.update();
-
         int elapsed = SDL_GetTicks();
+        
+        swarm.update(elapsed);
         
        // angle = angle + 1; //Increment angle by 1 everytime the loop runs.
         //rads = angle*(Screen::PI/180);

@@ -8,7 +8,7 @@
 
 #include "Swarm.hpp"
 
-Swarm::Swarm() {
+Swarm::Swarm(): m_timeLast(0) {
     
     m_pParticle = new Particle[NPARTICLES];
     
@@ -18,9 +18,13 @@ Swarm::~Swarm() {
     
 }
 
-void Swarm::update() {
+void Swarm::update(int elapsed) {
+    
+    int interval = elapsed - m_timeLast;
     for (int i=0; i < Swarm::NPARTICLES; i++) {
-        m_pParticle[i].update();
+        m_pParticle[i].update(interval);
     }
+    
+    m_timeLast = elapsed;
     
 }

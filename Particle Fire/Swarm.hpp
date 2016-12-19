@@ -22,11 +22,12 @@ public:
     virtual ~Swarm();
     
     const Particle  *const getParticles() { return m_pParticle; }
-    void update();
+    void update(int elapsed);
     
 private:
     
     Particle *m_pParticle;
+    int m_timeLast;
     
 };
 
